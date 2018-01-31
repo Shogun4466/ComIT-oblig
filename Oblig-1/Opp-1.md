@@ -101,7 +101,5 @@ Merk at den bakerste posisjonen er definert som posisjon 0. Dette vil resultere 
 Samme formel som Binær til desimal, men 2 byttes til 16: siffer*16<sup>n</sup>
 Tallene adderes igjen til slutt for å finne desimaltallet.
 
-
-
 ### Kilder:
 https://www.uio.no/studier/emner/matnat/ifi/INF1000/h15/undervisningsmateriale/andre-tallsystemer-(matematisk).pdf
