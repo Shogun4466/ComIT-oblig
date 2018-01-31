@@ -1,6 +1,6 @@
 # Oppgave 1
 
-<h1><strong>1. Fyll ut manglende tall i tabell</strong></h1>
+<h1><strong>Fyll ut manglende tall i tabell</strong></h1>
 <table style="width: 687px;" border="1">
 <tbody>
 <tr>
@@ -73,4 +73,6 @@
 </table>
 
 
+
 ## Oppgave A
+
