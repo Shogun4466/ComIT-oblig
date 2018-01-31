@@ -1,1 +1,7 @@
+package main
 
+import "fmt"
+
+func main() {
+	fmt.Println("Halla cocksucker, jeg knulla morra di igår")
+}
