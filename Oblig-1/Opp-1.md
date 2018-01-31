@@ -1,5 +1,6 @@
 # Oppgave 1
 
+
 ## Fyll ut manglende tall i tabell:
   <table style="width: 687px;" border="1">
   <tbody>
@@ -78,6 +79,7 @@
 Før vi går inn på metodene vi bruker for å konvertere binær-, hexadesimal- og desimaltall må vi se på hvilke tall som ligger til grunn for hvert enkelt tallsystem. Binærtallsystemet har 2 som grunntall. det vil si at systemet har kun to siffer før det går videre til neste tallposisjon. Binære tall har 10 som grunntall, og hexadesimaltall har 16 som grunntall. Desimalene for de seks siste desimalene vi ikke har siffer for går fra A til F. For å gjøre det klart hvilken talltype vi oppererer med, kan vi notere grunntallet etter et tall. Eksempel: 1101<sub>2</sub>, 13<sub>10</sub>, D<sub>16</sub>
 
 Vi vil nå gå gjennom metoder for konvertering mellom talltypene:
+
 
 #### Desimal til binær:
 Del tallet på to. Dersom det blir en rest, det vil si at svaret ender med .5, noterer vi 1. Derson du får et heltall noterer vi 0. Fortsett så denne prosessen med svartallet fra delingen til du har 0. Det første som ble notert er det siste sifferet i sifferrekken som danner det binære tallet.
