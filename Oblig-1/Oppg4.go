@@ -14,6 +14,6 @@ func main() {
 		"\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF"
 
 	for i := 0; i < len(sample); i++ {
-		fmt.Printf("%x %c %b \n", sample[i], sample[i], sample[i])
+		fmt.Printf("%X %c %b \n", sample[i], sample[i], sample[i])
 	}
 }
