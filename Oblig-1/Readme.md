@@ -14,6 +14,7 @@ Kjøretiden til Bubblesort-algoritmen øker eksponensielt når utvalget algoritm
 Hele oppgaven besvart i Oppg-3.go
 
 ## Oppgave 4
+Deloppgavene er delt inn i separate filer.
 
 ### 4a
 Utskriften fra programmet viser "runes" fra 0x80 til 0x9F for %c. Vi kjørte programmet på forskjellige PCer og opperativsystemer, og runene er forskjellige fra system til system. De varierer mellom svarte bokser, kvadrater uten fyll og svarte diamanter.
