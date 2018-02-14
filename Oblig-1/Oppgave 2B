@@ -1,7 +1,7 @@
 //Oppgave 2B inneholder en benchmark til Bubblesortmodified koden i Oppgave 2A. Denne benchmark koden er identisk med koden til
-benchmarkBsort bare at den er for bubblesort modified. Koden er fra linje 50-69. Forelesers kode ga oss en pekepinn på hvordan vi 
-skulle lage benchmarks. Den kjører benchmarken henholdsvis 100, 1000 og 10000 ganger. Den henter verdier og deklarasjoner fra
-Oppgave 2A derav package algorithms.
+//benchmarkBsort bare at den er for bubblesort modified. Koden er fra linje 50-69. Forelesers kode ga oss en pekepinn på hvordan vi 
+//skulle lage benchmarks. Den kjører benchmarken henholdsvis 100, 1000 og 10000 ganger. Den henter verdier og deklarasjoner fra
+//Oppgave 2A derav package algorithms.
 
 package algorithms
 
