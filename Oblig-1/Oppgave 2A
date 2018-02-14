@@ -9,7 +9,7 @@ func Bubble_sort_modified(list []int) {
 		swapped = false
 		for i := 1; i < n-1; i++ {
 			if list[i-1] > list[i] {
-				// swap values using Go's tuple assignment
+				// Swap values som bruker Go's multiple assignments
 				list[i], list[i-1] = list[i-1], list[i]
 				swapped = true
 			}
