@@ -18,7 +18,7 @@ func TestExtendedASCII(t *testing.T) {
 	}
 }
 
-// Her forsøkte vi å definerer parametre for at c skal kun være innenfor rekkevide 128 og 256, men outputen blir ikke riktig
+// Her forsøkte vi å definerer parametre for at c skal kun være innenfor rekkevide 128 og 255, men outputen blir ikke riktig
 
 func isExtendedASCII(s string) bool {
 	for c := range s {
