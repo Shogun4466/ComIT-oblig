@@ -1,3 +1,5 @@
+// Oppgave 2A er laget for å sortere verdier i stigende rekkefølge. Vi oppretter en funksjon kalt Bubble_sort_modified. Her brukes en 
+// liste kalt "list" og lengden av denne listen definerer en variabel kalt "n". 
 package algorithms
 
 // Alt fra linje 4 til linje 19 er oppgave 2
