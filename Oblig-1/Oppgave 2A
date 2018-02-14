@@ -1,7 +1,6 @@
 package algorithms
 
-// Les https://en.wikipedia.org/wiki/Bubble_sort
-// Alt fra linje 4 til linje 20 er oppgave 2
+// Alt fra linje 4 til linje 19 er oppgave 2
 func Bubble_sort_modified(list []int) {
 	n := len(list)
 	swapped := true
