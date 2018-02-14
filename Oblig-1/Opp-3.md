@@ -1,9 +1,5 @@
 package main
-
-
-
 import (
-
 	"fmt"
 
 	"os"
@@ -11,57 +7,29 @@ import (
 	"os/signal"
 
 	"syscall"
-
 )
-
-
-
 func main() {
-
 	indefLoop()
 }
 func indefLoop() {
-
-
 	c := make(chan os.Signal, 1)
 
 	signal.Notify(c,
 
-		syscall.SIGINT,
-
-		syscall.SIGQUIT,
-
-		syscall.SIGHUP,
-
-		syscall.SIGILL)
-
-
+		syscall.SIGINT,)
 
 	for {
 
-		fmt.Println("Indefinite loop running")
+		fmt.Println("Loooooooooooooop")
 
-		s := <-c
+		a := <-c
 
-		switch s {
+		switch a {
 
 		case syscall.SIGINT:
 
-			fmt.Println("Process terminated - SIGINT")
-
-		case syscall.SIGQUIT:
-
-			fmt.Println("Terminal quit - SIGQUIT")
-
-		case syscall.SIGHUP:
-
-			fmt.Println("Hangup - SIGHUP")
-
-		case syscall.SIGILL:
-
-			fmt.Println("Illegal instruction - SIGILL")
+			fmt.Println("You shall not pass SIGINT")
 		}
 		break
 	}
-
 }
