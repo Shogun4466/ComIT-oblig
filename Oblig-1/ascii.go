@@ -1,3 +1,5 @@
+// Dette er grunnlaget vi brukte for å gjennomføre ExtendedASCII og bruk av denne fila for å kjøre test på iso_test.go
+
 package main
 
 import "fmt"
