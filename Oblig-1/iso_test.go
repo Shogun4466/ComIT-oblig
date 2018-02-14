@@ -14,6 +14,7 @@ func ExtendedASCIIText() string {
 	return string(a)
 }
 
+// Her forstår vi ikke syntaxen i function TestExtendedASCII
 func TestExtendedASCII(t *testing.T) {
 	if !(isExtendedASCII(ExtendedASCIIText())){
 		t.Fail()
