@@ -16,7 +16,7 @@ inn i slice "a". Konverterer så byteverdiene i slicen til en string-verdi.
 
 func makeText()string{
 	var a []byte
-	for i := 0x80; i < 0xFF; i++{
+	for i := 0x80; i <= 0xFF; i++{
 		a = append(a, byte(i))
 	}
 	extAscii := string(a)
