@@ -4,24 +4,14 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"io/ioutil"
 )
 
 func main (){
-	File()
-	fmt.Println ("Information about file text.txt")
-	Size()
-	Directory ()
-	Regular ()
-	Unix ()
-	Append ()
-	Device ()
-	Symbolic ()
+	FileInfo(file())
 }
 
-//Forsøk på å få koden til å lese en hvilken som helst fil:
 
-func File ()string{
+func file ()string{
 	arg := os.Args[1:]
 	var file string
 
@@ -31,108 +21,68 @@ func File ()string{
 	return file
 }
 
-//Trenger mer over
-//Fungerende kode:
 
-func Size() {
-	data, err := ioutil.ReadFile("text.txt")
-	if err != nil {
-		log.Panicf("failed reading file: %s", err)
-	}
-	fmt.Printf("Size: %d bytes\n", len(data))
-	i := len(data)
-	f := float64(i)
 
-	fmt.Printf("Size in KB: %f\n", f/1024)
-	fmt.Printf("Size in MB: %f\n", f/1024e3)
-	fmt.Printf("Size in GB: %e\n", f/1024e6)
-}
+func FileInfo (file string) {
 
-func Directory () {
-	fi, err := os.Lstat("text.txt")
+	fi, err := os.Lstat(file)
 	if err != nil {
 		log.Fatal(err)
 	}
-	mode := fi.Mode ()
+	info, err := os.Stat(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+	mode := fi.Mode()
+	fmt.Println ("Information about file",file)
+
+	var bytes int64 = info.Size()
+	var kb float64 = (float64)(bytes/1024)
+	var mb float64 = (kb/1024)
+	var gb float64 = (mb/1024)
+
+fmt.Println("Size:",bytes,"Bytes,",kb,"KB,",mb,"MB,",gb,"GB")
 
 	if mode.IsDir () {
 		fmt.Println("Is a directory")
 	} else {
 		fmt.Println("Is not a directory")
 	}
-}
-
-func Regular () {
-	fi, err := os.Lstat("text.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	mode := fi.Mode ()
 
 	if mode.IsRegular () {
 		fmt.Println("Is a regular file")
 	} else {
 		fmt.Println("Is not a regular file")
 	}
-}
-
-func Unix () {
-	fi, err := os.Lstat("text.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	mode := fi.Mode ()
-
-	var unix = mode & os.ModePerm
-
-	if unix == 0777 {
-		fmt.Println("Has Unix permission bits -rwxrwxrwx")
-	} else {
-		fmt.Println("Does not have Unix permission bits -rwxrwxrwx")
-	}
-}
-
-func Append () {
-	fi, err := os.Lstat("text.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	mode := fi.Mode ()
 
 	var isappend = mode & os.ModeAppend
-
 	if isappend != 0 {
 		fmt.Println("Is append only")
 	} else {
 		fmt.Println("Is not append only")
 	}
-}
 
-func Device () {
-	fi, err := os.Lstat("text.txt")
-	if err != nil {
-		log.Fatal(err)
+	var unix = mode & os.ModePerm
+	if unix == 0777 {
+	fmt.Println("Has Unix permission bits -rwxrwxrwx")
+	} else {
+	fmt.Println("Does not have Unix permission bits -rwxrwxrwx")
 	}
-	mode := fi.Mode ()
+
+	if mode.IsRegular () {
+		fmt.Println("Is a regular file")
+	} else {
+		fmt.Println("Is not a regular file")
+	}
 
 	var device = mode & os.ModeDevice
-
 	if device != 0 {
 		fmt.Println("Is a device file")
 	} else {
 		fmt.Println("Is not a device file")
 	}
-}
-
-func Symbolic () {
-	fi, err := os.Lstat("text.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	mode := fi.Mode ()
 
 	var symbolic = mode & os.ModeSymlink
-
 	if symbolic != 0 {
 		fmt.Println("Is a symbolic link")
 	} else {
