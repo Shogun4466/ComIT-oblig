@@ -16,6 +16,18 @@ Is/Is not append only
 Is/Is not a device file
 Is/Is not a symbolic link
 
+funksjonsuttryk for variablene med os 
+	var bytes int64 = info.Size()
+	var kb int64 = (bytes / 1024)
+	var mg float64 = (float64)(kb / 1024)
+	var gb float64 = (mg / 1024)
+	var modePerm = mode & os.ModePerm
+	var append = mode & os.ModeAppend
+	var device = mode & os.ModeDevice
+	var charDevice = mode & os.ModeCharDevice
+	var unixBlock = mode & os.ModeDevice
+	var symLink = mode & os.ModeSymlink
+
 Bruk av kode og eksempler fra GoLang kopieres og redigeres etter behov under
 */ 
 
