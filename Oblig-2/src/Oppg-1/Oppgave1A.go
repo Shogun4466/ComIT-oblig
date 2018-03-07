@@ -19,6 +19,8 @@ func main (){
 	Symbolic ()
 }
 
+//Forsøk på å få koden til å lese en hvilken som helst fil:
+
 func File ()string{
 	arg := os.Args[1:]
 	var file string
@@ -28,6 +30,9 @@ func File ()string{
 	}
 	return file
 }
+
+//Trenger mer over
+//Fungerende kode:
 
 func Size() {
 	data, err := ioutil.ReadFile("text.txt")
