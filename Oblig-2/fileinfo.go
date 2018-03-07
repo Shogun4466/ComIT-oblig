@@ -14,10 +14,18 @@ Is/Is not a regular file
 Has Unix permission bits: -rwxrwxrwx
 Is/Is not append only
 Is/Is not a device file
-Is/Is not a Unix character device
-Is/Is not a Unix block device
 Is/Is not a symbolic link
-
+funksjonsuttryk for variablene med os 
+	var bytes int64 = info.Size()
+	var kb int64 = (bytes / 1024)
+	var mg float64 = (float64)(kb / 1024)
+	var gb float64 = (mg / 1024)
+	var modePerm = mode & os.ModePerm
+	var append = mode & os.ModeAppend
+	var device = mode & os.ModeDevice
+	var charDevice = mode & os.ModeCharDevice
+	var unixBlock = mode & os.ModeDevice
+	var symLink = mode & os.ModeSymlink
 Bruk av kode og eksempler fra GoLang kopieres og redigeres etter behov under
 */ 
 
@@ -65,9 +73,7 @@ func main() {
 }
 
 /*
-
 Kode for å vise typer av file interface: 
-
 type FileInfo interface {
         Name() string       // base name of the file
         Size() int64        // length in bytes for regular files; system-dependent for others
@@ -76,13 +82,8 @@ type FileInfo interface {
         IsDir() bool        // abbreviation for Mode().IsDir()
         Sys() interface{}   // underlying data source (can return nil)
 }
-
 */
 
 /* Oppgave 1B
 Må inneholde en directory som gjør at +build kan kjøre. Eksempel finner man på Golang-packages 
-
 */
-
-
-
