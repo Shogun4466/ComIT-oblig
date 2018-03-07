@@ -14,8 +14,6 @@ Is/Is not a regular file
 Has Unix permission bits: -rwxrwxrwx
 Is/Is not append only
 Is/Is not a device file
-Is/Is not a Unix character device
-Is/Is not a Unix block device
 Is/Is not a symbolic link
 
 Bruk av kode og eksempler fra GoLang kopieres og redigeres etter behov under
