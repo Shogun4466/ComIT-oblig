@@ -7,23 +7,9 @@ import (
 )
 
 func main (){
-	FileInfo(file())
-}
-
 //Henter først ut argumentet fra kommandolinje så koden kan kjøres på alle filer eller mapper
-func file ()string{
-	arg := os.Args[1:]
-	var file string
-
-	for _, v := range arg {
-		file += v
-	}
-	return file
-}
-
-//Implementerer errorhåndtering og lesing av filen både for .os og FileInfo
-func FileInfo (file string) {
-
+	file := os.Args[1]
+//Implementerer lesing av filen både for .os og info
 	fi, err := os.Lstat(file)
 	if err != nil {
 		log.Fatal(err)
