@@ -1,10 +1,14 @@
 # Deltagere
-Jørgen Christian Arentz Rostrup, Benjamin Sarpong, Ørjan Skjerpingstad Mortensen, Vuong Vo Nguyen, Tor Ivar Martin Vik
+Jørgen Christian Arentz Rostrup<br/>
+Benjamin Sarpong<br/>
+Ørjan Skjerpingstad Mortensen<br/>
+Vuong Vo Nguyen<br/>
+Tor Ivar Martin Vik
 
-# Oppgave 1
+####### Oppgave 1
 I denne oppgaven skal vi skrive et golang program som skal returnere definert informasjon om en fil, fileinfo. 
 
-Visse krav for oppgaven og hva den skal returnere er om det er/er ikke <br/>
+Visse krav for oppgaven og hva den skal returnere er om det er/ikke er <br/>
 filens infonavn<br/>
 filens størrelse ut ifra bytes KB, MB og GB<br/>
 om det er en katelog<br/>
@@ -30,8 +34,8 @@ Oppgave 3 er delt inn i a, b, c, d og e.
 
 I oppgave A skal vi lage en go-fil med navn "addup" og skal inneholde to funksjoner som kommuniserer med hverandre gjennom channels.<br/> 
 Funksjon A skal lese inn to tall fra terminalen og sende disse to verdiene til funksjon b.<br/>
-Funksjon B skal skal legge sammen de to tallene og sende resultatet tilbake til funksjon A som skriver ut resultatet til terminal.<br/>
- 
+Funksjon B skal skal legge sammen de to tallene og sende resultatet tilbake til funksjon A som skriver ut resultatet til terminal.
+
 **Forklaring: ** 
 
 I oppgave B skal vi lage to programmer med navnene addtofile og sumfromfile. Disse programmene skal kommuniserer gjennom en fil.<br/>
