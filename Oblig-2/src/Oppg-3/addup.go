@@ -14,7 +14,9 @@ func main() {
 
 	go func() {
 		<-sigInt
-		fmt.Println("Interruption signal recived")
+		fmt.Println("Interruption signal recived, terminating program...... ")
+		time.sleep(2*time.Second)
+		fmt.Println("Terminated")
 		os.Exit(1)
 	}()
 
