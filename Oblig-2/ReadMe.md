@@ -50,8 +50,8 @@ I oppgave C skal vi beskrive og implementere en feilhåndtering på alle I/O, b�
 
 I oppgave D skal vi implementerer en håndtering av SIGINT i både oppgave a og oppgave b. Programmene skal også skrive ut en avslutningsmelding dersom de mottar SIGINT før de fullføres naturlig.
 
-#### Forklaring: Legge inn en forklaring her
+#### Forklaring: Trenger ikke noe spesifisert forklaring, SIGINT kjøres når man trykker Control C. 
 
 I oppgave E skal vi bygge om filene i oppgave 1 og 2 og gjøre dem om til kjørebare filer på operativsystemet (.exe) og legge dem til i en egen bin-mappe.
 
-#### Forklaring: Legge inn en forklaring her
+#### Forklaring: Det ligger kjørbarfiler i BIN, bare å ha nødvendig filer og kjøre via terminalen. 
