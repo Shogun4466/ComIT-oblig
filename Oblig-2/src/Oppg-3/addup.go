@@ -9,21 +9,21 @@ import (
 )
 
 func main() {
-
+	//Oppgave 3D SIGINT
 	sigInt := make(chan os.Signal, 1)
 	signal.Notify(sigInt, os.Interrupt)
 
 	go func() {
 		<-sigInt
-		fmt.Println("Interruption signal recived")
+		fmt.Println("Interruption signal recived, terminating......") //Banter
+		time.Sleep(2*time.Second)
+		fmt.Println("TERMINATED")
 		os.Exit(1)
 	}()
 
-
-
 	channel := make(chan int)
 	go readInput(channel)
-	time.Sleep(5 * time.Second)
+	time.Sleep(5 * time.Second) //Gir deg 5 sekunder på å skrive inn et nummer, totalt har man 10 sek på å skrive inn
 	go addUp(channel)
 	time.Sleep(5 * time.Second)
 }
@@ -32,7 +32,8 @@ func readInput(channel chan int) {
 
 	var number1 string
 	var number2 string
-
+	
+	//Konverterer stringen til int. Errorhåndtering: hvis den registrer noen annen input enn tall får man en print
 	fmt.Println("Enter number: ")
 	fmt.Scan(&number1)
 	intNumber1, err := strconv.Atoi(number1)
