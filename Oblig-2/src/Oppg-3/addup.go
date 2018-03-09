@@ -8,8 +8,6 @@ import (
 	"strconv"
 
 	"fmt"
-
-	"log"
 )
 
 
@@ -20,14 +18,8 @@ func main() {
 
 	input2 := os.Args[2]
 
-	tall1, err := strconv.Atoi(input1)
-	tall2, err := strconv.Atoi(input2)
-
-	if err != nil {
-
-		log.Fatal(err)
-
-	}
+	tall1,_ := strconv.Atoi(input1)
+	tall2,_ := strconv.Atoi(input2)
 
 	s := make(chan int)
 
