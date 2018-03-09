@@ -5,43 +5,55 @@ import (
 	"os"
 	"os/signal"
 	"time"
+	"strconv"
 )
 
 func main() {
-	//Oppgave 3D SIGINT
+
 	sigInt := make(chan os.Signal, 1)
 	signal.Notify(sigInt, os.Interrupt)
 
 	go func() {
 		<-sigInt
-		fmt.Println("Interruption signal recived, terminating program...... ") //#Banter
-		time.Sleep(2*time.Second)
-		fmt.Println("TERMINATED")
+		fmt.Println("Interruption signal recived")
 		os.Exit(1)
 	}()
 
+
+
 	channel := make(chan int)
 	go readInput(channel)
-	time.Sleep(5 * time.Second) //Gir deg 5 sek på å skrive inn nummer, totalt har du 10 sek på å skrive inn nummer hvis ikke terminers programmet
+	time.Sleep(5 * time.Second)
 	go addUp(channel)
 	time.Sleep(5 * time.Second)
 }
 
 func readInput(channel chan int) {
 
-	var number1 int
-	var number2 int
+	var number1 string
+	var number2 string
 
 	fmt.Println("Enter number: ")
 	fmt.Scan(&number1)
+	intNumber1, err := strconv.Atoi(number1)
+	if err != nil{
+		fmt.Println("Please input a number. Shutting down.")
+		os.Exit(0)
+	}
+
 	fmt.Println("Enter number to add to the first number: ")
 	fmt.Scan(&number2)
+	intNumber2, err := strconv.Atoi(number2)
+	if err != nil{
+		fmt.Println("Please input a number. Shutting down.")
+		os.Exit(0)
+	}
 
-	channel <- number1
-	channel <- number2
+	channel <- intNumber1
+	channel <- intNumber2
 
 	result := <-channel
-	fmt.Println("Result:",number1,"+",number2,"=", result) //Skriver ut result som det første nr du skrev + nummer nr 2= resultat
+	fmt.Println("Result:",number1,"+",number2,"=", result)
 
 }
 
