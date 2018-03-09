@@ -19,7 +19,7 @@ om det er en enhetsfil <br/>
 og om den inneholder symbolsk lenke<br/>
 I tillegg skal vi bygge en build-program som kan utføres fra kommandolinja og ha et argument for et filnavn
 
-#### Forklaring: Funksjonen "main" krever et argument fra kommandolinja, slik at den kan kjøre alle de nødvendige mappene og filene. Etter dette implementerer vi lesinga av fila for både .os og info. Vi oppretter så variabler for bytestørrelser og bruker bytes som en grunnverdi int64. "Prinln" kjører vi hver en løkke for å se om fila er enten en directory. Vi bruker os-pakka og modus for å se om fila har Unix permission, append, device file og symbolic link. (SKRIV OM, JØRGEN HAR OPPDATERT!)
+#### Forklaring: Funksjonen "main" krever et argument fra kommandolinja, slik at den kan kjøre alle de nødvendige mappene og filene. Etter dette implementerer vi lesinga av fila for både .os og info. Vi oppretter så variabler for bytestørrelser og bruker bytes som en grunnverdi int64. "Prinln" kjører vi hver en løkke for å se om fila er enten en directory. Vi bruker os-pakka og modus for å se om fila har Unix permission, append, device file og symbolic link.
 
 ## Oppgave 2 
 I oppgaven skal vi lage en go-fil med filnavn filecount som skal lese en tekst-fil, skrive ut totalt antall linjer og de fem runene som forekommer mest i fila i medfølgende fil text.txt.<br/> 
