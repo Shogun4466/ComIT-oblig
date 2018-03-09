@@ -11,15 +11,15 @@ import (
 )
 
 func main() {
-	//Oppgave 3D SIGINT
+
 	sigInt := make(chan os.Signal, 1)
 	signal.Notify(sigInt, os.Interrupt)
 
 	go func() {
 		<-sigInt
-		fmt.Println("Interruption signal recived, terminating program...... ") //La til en litt morsom avslutning når man tar SIGINT input
-		time.Sleep(2*time.Second)
-		fmt.Println("TERMINATED") 
+		fmt.Println("Interruption signal recived, terminating program...... ")
+		time.Sleep(1*time.Second)
+		fmt.Println("Terminated")
 		os.Exit(1)
 	}()
 
@@ -30,25 +30,36 @@ func main() {
 
 func writeToFile() {
 
-	var number1 int
-	var number2 int
+	var number1 string
+	var number2 string
 
 	fmt.Println("Enter number: ")
 	fmt.Scan(&number1)
+	intNumber1, err := strconv.Atoi(number1)
+	if err != nil{
+		fmt.Println("Please input a number. Shutting down.")
+		os.Exit(0)
+	}
+
 	fmt.Println("Enter number to add to the first number: ")
 	fmt.Scan(&number2)
+	intNumber2, err := strconv.Atoi(number2)
+	if err != nil{
+		fmt.Println("Please input a number. Shutting down.")
+		os.Exit(0)
+	}
 
 	file, err := os.Create("result.txt")
 	if err != nil {
 		log.Fatal("Failed to create file", err)
 	}
 	defer file.Close()
-	
+
 	f, err := os.OpenFile("result.txt",os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal("Failed to open file", err)
 	}
-	if _, err := fmt.Fprintf(f, "%d\n%d", number1, number2); err != nil {
+	if _, err := fmt.Fprintf(f, "%d\n%d", intNumber1, intNumber2); err != nil {
 		log.Fatal("Failed to write to file", err)
 	}
 
@@ -61,7 +72,6 @@ func readResult(path string) {
 	data, err := ioutil.ReadFile(path)
 	checkErr(err)
 
-	//Henter ut de forskjellige linjene i result.txt som gjør at vi kan få skrevet ut result som i addup.go
 	tempData := string(data)
 	stringData := strings.Split(tempData, "\n")
 	tempNumber1 := stringData[len(stringData)-4]
@@ -82,5 +92,3 @@ func checkErr(e error) {
 		panic(e)
 	}
 }
-
-//Se feilhåndtering for resterende forklaringer på kode
