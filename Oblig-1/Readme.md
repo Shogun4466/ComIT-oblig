@@ -23,4 +23,4 @@ Utskriften fra programmet viser "runes" fra 0x80 til 0x9F for %c. Vi kjørte pro
 Hele oppgaven besvart i Oppg4b.go
 
 ### 4c
-Vi kom ikke frem til en god løsning. Kommentarer i filene ascii.go og ascii_test.go
+Vi kom ikke frem til en god løsning. Kommentarer i filene ascii.go og iso_test.go
