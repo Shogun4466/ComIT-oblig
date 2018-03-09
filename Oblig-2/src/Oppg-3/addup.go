@@ -38,6 +38,7 @@ func readInput(channel chan int) {
 	intNumber1, err := strconv.Atoi(number1)
 	if err != nil{
 		fmt.Println("Please input a number. Shutting down.")
+		time.Sleep(2 * time.Second) //Trengs for at ledetekst vinduet ikke skal lukke seg med en gang
 		os.Exit(0)
 	}
 
@@ -46,6 +47,7 @@ func readInput(channel chan int) {
 	intNumber2, err := strconv.Atoi(number2)
 	if err != nil{
 		fmt.Println("Please input a number. Shutting down.")
+		time.Sleep(2 * time.Second) //Trengs for at ledetekst vinduet ikke skal lukke seg med en gang
 		os.Exit(0)
 	}
 
