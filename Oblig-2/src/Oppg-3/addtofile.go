@@ -11,15 +11,15 @@ import (
 )
 
 func main() {
-
+	//Oppgave 3D SIGINT
 	sigInt := make(chan os.Signal, 1)
 	signal.Notify(sigInt, os.Interrupt)
 
 	go func() {
 		<-sigInt
-		fmt.Println("Interruption signal recived, terminating program...... ")
-		time.Sleep(1*time.Second)
-		fmt.Println("Terminated")
+		fmt.Println("Interruption signal recived, terminating program...... ") //La til en litt morsom avslutning når man tar SIGINT input
+		time.Sleep(2*time.Second)
+		fmt.Println("TERMINATED") 
 		os.Exit(1)
 	}()
 
@@ -43,7 +43,7 @@ func writeToFile() {
 		log.Fatal("Failed to create file", err)
 	}
 	defer file.Close()
-
+	
 	f, err := os.OpenFile("result.txt",os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal("Failed to open file", err)
@@ -61,6 +61,7 @@ func readResult(path string) {
 	data, err := ioutil.ReadFile(path)
 	checkErr(err)
 
+	//Henter ut de forskjellige linjene i result.txt som gjør at vi kan få skrevet ut result som i addup.go
 	tempData := string(data)
 	stringData := strings.Split(tempData, "\n")
 	tempNumber1 := stringData[len(stringData)-4]
@@ -81,3 +82,5 @@ func checkErr(e error) {
 		panic(e)
 	}
 }
+
+//Se feilhåndtering for resterende forklaringer på kode
