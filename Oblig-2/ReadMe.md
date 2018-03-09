@@ -46,7 +46,7 @@ Program A leser deretter resultatet fra fil og skriver ut summen til stdout.
 
 I oppgave C skal vi beskrive og implementere en feilhåndtering på alle I/O, både i oppgave A og oppgave B.
 
-#### Forklaring for implementering ligger under egen [Feilhåndtering.md](http://leggetillenke.com) i samme mappe. 
+#### Forklaring for implementering ligger under egen [Feilhåndtering.md](https://github.com/Shogun4466/ComIT-oblig/blob/master/Oblig-2/src/Oppg-3/feilh%C3%A5ndtering.md) i samme mappe. 
 
 I oppgave D skal vi implementerer en håndtering av SIGINT i både oppgave a og oppgave b. Programmene skal også skrive ut en avslutningsmelding dersom de mottar SIGINT før de fullføres naturlig.
 
