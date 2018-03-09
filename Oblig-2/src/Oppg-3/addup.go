@@ -62,7 +62,7 @@ func addUp(channel chan int) {
 
 	number1, number2 := <-channel, <-channel
 
-	result := (number1 + number2)
+	result := number1 + number2
 
 	channel <- result
 }
