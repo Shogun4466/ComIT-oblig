@@ -1,5 +1,3 @@
-## Obligatorisk oppgaven uke nr 10
-
 # Oppgave 1
 I denne oppgaven skal vi skrive et golang program som skal returnere definert informasjon om en fil, fileinfo. 
 
