@@ -1,37 +1,83 @@
 package main
-
 import (
-	"fmt"
-	"log"
 	"os"
+	"log"
+	"fmt"
+	"io/ioutil"
+	"strings"
 	"strconv"
+	"os/signal"
+	"time"
 )
 
 func main() {
-	file, err := os.Create("text.txt")
+
+	sigInt := make(chan os.Signal, 1)
+	signal.Notify(sigInt, os.Interrupt)
+
+	go func() {
+		<-sigInt
+		fmt.Println("Interruption signal recived, terminating program...... ")
+		time.Sleep(1*time.Second)
+		fmt.Println("Terminated")
+		os.Exit(1)
+	}()
+
+	writeToFile()
+	sumFromFile()
+	readResult("result.txt")
+}
+
+func writeToFile() {
+
+	var number1 int
+	var number2 int
+
+	fmt.Println("Enter number: ")
+	fmt.Scan(&number1)
+	fmt.Println("Enter number to add to the first number: ")
+	fmt.Scan(&number2)
+
+	file, err := os.Create("result.txt")
 	if err != nil {
-		log.Fatal("Cannot create file", err)
+		log.Fatal("Failed to create file", err)
 	}
 	defer file.Close()
 
+	f, err := os.OpenFile("result.txt",os.O_WRONLY, 0644)
+	if err != nil {
+		log.Fatal("Failed to open file", err)
+	}
+	if _, err := fmt.Fprintf(f, "%d\n%d", number1, number2); err != nil {
+		log.Fatal("Failed to write to file", err)
+	}
 
-	var number1 int
+	if err := f.Close(); err != nil {
+		log.Fatal(err)
+	}
+}
 
-	var number2 int
+func readResult(path string) {
+	data, err := ioutil.ReadFile(path)
+	checkErr(err)
 
+	tempData := string(data)
+	stringData := strings.Split(tempData, "\n")
+	tempNumber1 := stringData[len(stringData)-4]
+	tempNumber2 := stringData[len(stringData)-3]
+	tempResult := stringData[len(stringData)-2]
 
+	number1, err := strconv.Atoi(tempNumber1)
+	number2, err := strconv.Atoi(tempNumber2)
+	result, err := strconv.Atoi(tempResult)
 
-	fmt.Println("Enter number: ")
+	checkErr(err)
 
-	fmt.Scan(&number1)
+	fmt.Println("Result from file:",number1,"+",number2,"=", result)
+}
 
-	fmt.Println("Enter number to add to the first number: ")
-
-	fmt.Scan(&number2)
-
-	t := strconv.Itoa(number1)
-	n := strconv.Itoa(number2)
-
-	fmt.Fprintf(file, t)
-	fmt.Fprintf(file, n)
+func checkErr(e error) {
+	if e != nil {
+		panic(e)
+	}
 }
