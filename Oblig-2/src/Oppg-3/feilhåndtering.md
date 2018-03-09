@@ -1,4 +1,19 @@
-I filen addtofile.go ligger feilhåndteringen i hovedsak i følgende kode:
+I filen addup.go implementerer vi følgende feilhåndtering på input:
+
+	fmt.Println("Enter number to add to the first number: ")
+	fmt.Scan(&number2)
+	intNumber2, err := strconv.Atoi(number2)
+	if err != nil{
+		fmt.Println("Please input a number. Shutting down.")
+		os.Exit(0)
+	}
+
+Denne koden sørger for at input fra bruker er tall som kan legges sammen
+av funksjonen i koden. Programmet avslutter dersom input ikke er tall.
+
+
+I filen addtofile.go ligger feilhåndteringen i hovedsak i følgende kode i tillegg til tilsvarende
+feilhåndtering som i addup.go:
 
 	file, err := os.Create("result.txt")
 	if err != nil {
@@ -10,7 +25,7 @@ I filen addtofile.go ligger feilhåndteringen i hovedsak i følgende kode:
 	if err != nil {
 		log.Fatal("Failed to open file", err)
 	}
-	if _, err := fmt.Fprintf(f, "%d\n%d", number1, number2); err != nil {
+	if _, err := fmt.Fprintf(f, "%d\n%d", intNumber1, intNumber2); err != nil {
 		log.Fatal("Failed to write to file", err)
 	}
 
