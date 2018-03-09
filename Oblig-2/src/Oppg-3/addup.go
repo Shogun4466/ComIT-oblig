@@ -22,10 +22,9 @@ func main() {
 	}()
 
 	channel := make(chan int)
-	go readInput(channel)
-	time.Sleep(5 * time.Second) //Gir deg 5 sekunder på å skrive inn et nummer, totalt har man 10 sek på å skrive inn
+	go readInput(channel) 
 	go addUp(channel)
-	time.Sleep(5 * time.Second)
+	time.Sleep(5 * time.Second) //Etter at den har printa result så venter den i 5 sekunder før vinduet termineres
 }
 
 func readInput(channel chan int) {
