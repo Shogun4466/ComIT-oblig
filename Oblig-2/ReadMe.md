@@ -47,7 +47,7 @@ Program A leser deretter resultatet fra fil og skriver ut summen til stdout.
 
 I oppgave C skal vi beskrive og implementere en feilhåndtering på alle I/O, både i oppgave A og oppgave B.
 
-** Forklaring for implementering ligger under egen [Feilhåndteringsfila.md](http://leggetillenke.com) i samme mappe. ** 
+#### Forklaring for implementering ligger under egen [Feilhåndteringsfila.md](http://leggetillenke.com) i samme mappe. 
 
 I oppgave D skal vi implementerer en håndtering av SIGINT i både oppgave a og oppgave b. Programmene skal også skrive ut en avslutningsmelding dersom de mottar SIGINT før de fullføres naturlig.
 
