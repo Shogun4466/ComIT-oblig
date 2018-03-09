@@ -18,8 +18,8 @@ func main() {
 	go func() {
 		<-sigInt
 		fmt.Println("Interruption signal recived, terminating program...... ")
-		time.Sleep(1*time.Second)
-		fmt.Println("Terminated")
+		time.Sleep(2*time.Second)
+		fmt.Println("TERMINATED")
 		os.Exit(1)
 	}()
 
@@ -85,6 +85,7 @@ func readResult(path string) {
 	checkErr(err)
 
 	fmt.Println("Result from file:",number1,"+",number2,"=", result)
+	time.Sleep(2*time.Second) //Denne trengs for at exe fila skal kunne fungere i CMD
 }
 
 func checkErr(e error) {
