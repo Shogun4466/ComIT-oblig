@@ -1,28 +1,53 @@
 package main
 
 import (
-	"os"
-	"strconv"
 	"fmt"
+	"os"
+	"os/signal"
+	"time"
 )
 
 func main() {
-	input1 := os.Args[1]
-	input2 := os.Args[2]
 
-	tall1,_ := strconv.Atoi(input1)
-	tall2,_ := strconv.Atoi(input2)
+	sigInt := make(chan os.Signal, 1)
+	signal.Notify(sigInt, os.Interrupt)
 
-	s := make(chan int)
-	go noe(tall1, tall2, s)
-	sum := <-s
-	
-	fmt.Println(sum)
+	go func() {
+		<-sigInt
+		fmt.Println("Interruption signal recived")
+		os.Exit(1)
+	}()
+
+	channel := make(chan int)
+	go readInput(channel)
+	time.Sleep(5 * time.Second)
+	go addUp(channel)
+	time.Sleep(5 * time.Second)
 }
 
-func noe(tall1 int, tall2 int, s chan int) {
+func readInput(channel chan int) {
 
-	sum := tall1 + tall2
+	var number1 int
+	var number2 int
 
-	s <- sum
+	fmt.Println("Enter number: ")
+	fmt.Scan(&number1)
+	fmt.Println("Enter number to add to the first number: ")
+	fmt.Scan(&number2)
+
+	channel <- number1
+	channel <- number2
+
+	result := <-channel
+	fmt.Println("Result:",number1,"+",number2,"=", result)
+
+}
+
+func addUp(channel chan int) {
+
+	number1, number2 := <-channel, <-channel
+
+	result := (number1 + number2)
+
+	channel <- result
 }
