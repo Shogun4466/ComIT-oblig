@@ -5,7 +5,7 @@ Benjamin Sarpong<br/>
 Vuong Vo Nguyen<br/>
 Tor Ivar Martin Vik
 
-####### Oppgave 1
+# Oppgave 1
 I denne oppgaven skal vi skrive et golang program som skal returnere definert informasjon om en fil, fileinfo. 
 
 Visse krav for oppgaven og hva den skal returnere er om det er/ikke er <br/>
