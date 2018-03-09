@@ -18,18 +18,18 @@ func sumFromFile()  {
 	input1 := line[0]
 	input2 := line[1]
 
-	tall1,_ := strconv.Atoi(input1)
-	tall2,_ := strconv.Atoi(input2)
+	number1,_ := strconv.Atoi(input1)
+	number2,_ := strconv.Atoi(input2)
 
-	result := tall1 + tall2
+	result := number1 + number2
 
 
 	file, err := os.OpenFile("result.txt", os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Failed to open file", err)
 	}
 	if _, err := fmt.Fprintf(file,"\n%d\n", result); err != nil {
-		log.Fatal(err)
+		log.Fatal("Failed to write to file", err)
 	}
 
 	if err := file.Close(); err != nil {
