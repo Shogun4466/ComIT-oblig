@@ -42,7 +42,7 @@ Programmet "addtofile" skal lese to tall og skriver disse til en fil.<br/>
 Programmet "sumfromfile" skal lese tall fra fil laget av program A og adderer de to tallene. Summen skal dereetter skrives tilbake til samme fil.<br/>
 Program A leser deretter resultatet fra fil og skriver ut summen til stdout.
 
-#### Forklaring: Legge inn en forklaring her
+#### Forklaring: Koden er basert fra to programmer. Det første skal da putte inn to tall som da sendes videre til neste fil. Neste fil legger sammen og inneholder et resultat som sendes tilbake til første fil. Første fil printer da ut verdien ut til terminalen. 
 
 I oppgave C skal vi beskrive og implementere en feilhåndtering på alle I/O, både i oppgave A og oppgave B.
 
