@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <body>
+
+            <div class="ting" align="center">
+
+                <table>
+
+                    <tr>
+
+                        <th>Tvangsavvikling</th>
+
+                        <th>Regnskap</th>
+
+                        <th>Forradrpostnr</th>
+
+                        <th>Ansatte_antall</th>
+
+                        <th>Postadresse</th>
+
+                    </tr>
+
+                        {{range $.Entries}}
+
+                        <tr>
+                            <th>{{.Tvangsavvikling}}</th>
+
+                            <th>{{.Regnskap}}</th>
+
+                            <th>{{.Forradrpostnr}}</th>
+
+                            <th>{{.Antall_ansatte}}</th>
+
+                            <th>{{.Postadresse}}</th>
+
+                        </tr>
+
+                        {{end}}
+
+                </table>
+
+            </div>
+
+        </body>
+
+    </head>
+
+</html>
