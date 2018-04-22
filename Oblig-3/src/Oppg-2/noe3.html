@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <body>
+            <div class="ting" align="center">
+
+                <table>
+
+                        <tr>
+
+                            <th>Name</th>
+
+                            <th>Plastic</th>
+
+                            <th>GlasMetal</th>
+
+                            <th>Shoe</th>
+
+                            <th>Longitude</th>
+
+                            <th>Latitude</th>
+
+                        </tr>
+
+                        {{range $.Entries}}
+
+                        <tr>
+
+                            <th>{{.Name}}</th>
+
+                            <th>{{.Plastic}}</th>
+
+                            <th>{{.GlasMetal}}</th>
+
+                            <th>{{.Shoe}}</th>
+
+                            <th>{{.Longitude}}</th>
+
+                            <th>{{.Latitude}}</th>
+
+                        </tr>
+
+                        {{end}}
+
+                </table>
+
+            </div>
+
+        </body>
+
+    </head>
+
+</html>
