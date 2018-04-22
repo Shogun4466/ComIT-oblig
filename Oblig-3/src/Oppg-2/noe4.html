@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<body>
+<div class="ting" align="center">
+
+    <table>
+
+        <tr>
+
+            <th>Name</th>
+
+            <th>Shortname</th>
+
+            <th>Groupable</th>
+
+            <th>Searchable</th>
+
+            <th>IndexPrimaryKey</th>
+
+            <th>Description</th>
+
+            <th>Definition</th>
+
+        </tr>
+
+    {{range $.Entries}}
+
+        <tr>
+
+            <th>{{.Name}}</th>
+
+            <th>{{.Shortname}}</th>
+
+            <th>{{.Groupable}}</th>
+
+            <th>{{.Searchable}}</th>
+
+            <th>{{.IndexPrimaryKey}}</th>
+
+            <th>{{.Description}}</th>
+
+            <th>{{.Definition}}</th>
+
+        </tr>
+
+    {{end}}
+
+    </table>
+
+</div>
+
+</body>
+
+</head>
+
+</html>
