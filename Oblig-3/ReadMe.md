@@ -14,5 +14,5 @@ De fem html-filene er ansvarlig for oppsettet og presentasjonen av den "unmarsha
 
 ## Oppgave 3 
 
-I oppgave 3
+I oppgave 3 lager vi en server som lytter på port 17 tcp/udp i henhold til RFC 865. Når serveren mottar data sender den QotD tilbake til klienten. Serveren er testet både lokalt ved å kjøre både serverene og klienten på samme maskin og over nettverk med en maskin som kjører serveren og en som kjører klienten.
 
