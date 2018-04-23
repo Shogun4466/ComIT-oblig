@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <body>
+
+            <div class="ting" align="center">
+
+                <table>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Code</th>
+
+                    </tr>
+
+                    {{range $.Entries}}
+
+                    <tr>
+
+                        <th>{{.Name}}</th>
+
+                        <th>{{.Code}}</th>
+
+                    </tr>
+
+                    {{end}}
+
+                </table>
+
+            </div>
+
+        </body>
+
+    </head>
+
+</html>
