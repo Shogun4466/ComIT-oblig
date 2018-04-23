@@ -17,15 +17,16 @@ func main() {
 	r.HandleFunc("/2", response2)
 	r.HandleFunc("/3", response3)
 	r.HandleFunc("/4", response4)
+	r.HandleFunc("/5", response5)
 
 	http.ListenAndServe(":8080", nil);
 }
-// Stores the jason data in set structs
+// Creates a struct to store the JSON data.
 type Noe1 struct {
 
 	Entries []struct {
 
-		Name   string `json:"navn"`
+		Name string `json:"navn"`
 		Number string `json:"nummer"`
 
 	} `json:"entries"`
@@ -57,21 +58,45 @@ type Noe4 struct {
 
 	Entries []struct {
 
-		Name string `json:"name"`
-		Shortname string `json:"shortNavn"`
-		Groupable string `json:"groupable"`
-		Searchable string `json:"searchable"`
-		IndexPrimaryKey string `json:"indexPrimaryKey"`
-		Description string `json:"description"`
-		Definition string `json:"definition"`
+		CompanyCode int `json:"CompanyCode"`
+		Dataset int `json:"Dataset"`
+		StopCode string `json:"StopCode"`
+		FullName string `json:"FullName"`
+		Name string `json:"Name"`
+		ShortName string `json:"ShortName"`
+		Latitude float64 `json:"Latitude"`
+		Longitude float64 `json:"Longitude"`
+		Zone1 int `json:"Zone1"`
+		Zone2 int `json:"Zone2"`
+		TransferTime int `json:"TransferTime"`
+		Transfer int `json:"Transfer"`
+		BusStopType int `json:"BusStopType"`
+		BusStopId int `json:"BusStopId"`
 
-	}`json:"entries"`
+	} `json:"BusStops"`
 }
+
+type Noe5 struct {
+
+	Entries []struct {
+
+		Name string`json:"name"`
+
+		Code string `json:"code"`
+
+	} `json:"countries"`
+
+
+
+}
+//some variables to hold noe values
 var noe1 Noe1
 var noe2 Noe2
 var noe3 Noe3
 var noe4 Noe4
+var noe5 Noe5
 
+//A function witch determins the url to aquire the JSON data from as well as refrences to noe1.html where the setup is located
 func response1(w http.ResponseWriter, r *http.Request) {
 
 	url := "https://hotell.difi.no/api/json/difi/geo/fylke"
@@ -125,7 +150,7 @@ func response2(w http.ResponseWriter, r *http.Request) {
 }
 func response4(w http.ResponseWriter, r *http.Request) {
 
-	url := "https://hotell.difi.no/api/json/difi/geo/fylke/fields"
+	url := "http://sanntidsappservice-web-prod.azurewebsites.net/busstops?format=json"
 
 	result, _ := http.Get(url)
 
@@ -136,6 +161,23 @@ func response4(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("noe4.html")
 
 	err = t.Execute(w, noe4)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+func response5(w http.ResponseWriter, r *http.Request) {
+
+	url := "http://api.nobelprize.org/v1/country.json"
+
+	result, _ := http.Get(url)
+
+	body, _ := ioutil.ReadAll(result.Body)
+
+	json.Unmarshal(body, &noe5)
+
+	t, err := template.ParseFiles("noe5.html")
+
+	err = t.Execute(w, noe5)
 	if err != nil {
 		log.Fatal(err)
 	}
