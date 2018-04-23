@@ -2,59 +2,88 @@
 
 <html>
 
-<head>
+    <head>
 
-<body>
-<div class="ting" align="center">
+        <body>
 
-    <table>
+            <div class="ting" align="center">
 
-        <tr>
+                <table>
 
-            <th>Name</th>
+                    <tr>
 
-            <th>Shortname</th>
+                        <th>CompanyCode</th>
 
-            <th>Groupable</th>
+                        <th>Dataset</th>
 
-            <th>Searchable</th>
+                        <th>StopCode</th>
 
-            <th>IndexPrimaryKey</th>
+                        <th>FullName</th>
 
-            <th>Description</th>
+                        <th>Name</th>
 
-            <th>Definition</th>
+                        <th>ShortName</th>
 
-        </tr>
+                        <th>Latitude</th>
 
-    {{range $.Entries}}
+                        <th>Longitude</th>
 
-        <tr>
+                        <th>Zone1</th>
 
-            <th>{{.Name}}</th>
+                        <th>Zone2</th>
 
-            <th>{{.Shortname}}</th>
+                        <th>TransferTime</th>
 
-            <th>{{.Groupable}}</th>
+                        <th>Transfer</th>
 
-            <th>{{.Searchable}}</th>
+                        <th>BusStopType</th>
 
-            <th>{{.IndexPrimaryKey}}</th>
+                        <th>BusStopId</th>
 
-            <th>{{.Description}}</th>
+                    </tr>
 
-            <th>{{.Definition}}</th>
+                    {{range $.Entries}}
 
-        </tr>
+                    <tr>
 
-    {{end}}
+                        <th>{{.CompanyCode}}</th>
 
-    </table>
+                        <th>{{.Dataset}}</th>
 
-</div>
+                        <th>{{.StopCode}}</th>
 
-</body>
+                        <th>{{.FullName}}</th>
 
-</head>
+                        <th>{{.Name}}</th>
+
+                        <th>{{.ShortName}}</th>
+
+                        <th>{{.Latitude}}</th>
+
+                        <th>{{.Longitude}}</th>
+
+                        <th>{{.Zone1}}</th>
+
+                        <th>{{.Zone2}}</th>
+
+                        <th>{{.TransferTime}}</th>
+
+                        <th>{{.Transfer}}</th>
+
+                        <th>{{.BusStopType}}</th>
+
+                        <th>{{.BusStopId}}</th>
+
+                    </tr>
+
+                    {{end}}
+
+                </table>
+
+            </div>
+
+        </body>
+
+    </head>
 
 </html>
