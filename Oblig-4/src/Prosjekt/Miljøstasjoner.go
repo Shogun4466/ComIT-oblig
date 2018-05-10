@@ -35,7 +35,12 @@ type Miljø struct {
 	}`json:"entries"`
 }
 
+type Test struct{
+	Posts int `json:"posts"`
+}
+
 var miljø Miljø
+var test Test
 
 //funksjonen response1 henter html-malen index.html
 func response1(w http.ResponseWriter, r *http.Request) {
