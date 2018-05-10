@@ -4,6 +4,6 @@ Programmet vårt er lagd for å vise innbyggerne i Stavanger hvor de kan finne M
 
 
 
-<h1>Systemarkitekrtur</h1> ![arkitektur](https://i.imgur.com/6s6B2DN.png)
+<h1>Systemarkitekrtur</h1> <a href="https://imgur.com/6s6B2DN"><img src="https://i.imgur.com/6s6B2DN.png" title="source: imgur.com" /></a>
 
 Vårt programm henter nåtids informasjon fra to APIer liggende i https://hotell.difi.no/api/json/stavanger/miljostasjoner og https://maps.googleapis.com/maps/api/js?key=AIzaSyAyb_m6VmJ0foIEpxxmJ7ubQISfWV2TfX4&callback=initMap. Informasjonen hentet fra API-et blir brukt til å fremvise informasjon om miljøstasjoner i Stavanger området. Når programmet tas i bruk vill API dataen bli vist på en av to mulige måter. Visnings måten er basert på valget til brukeren mellom to knapper. Den første visningen setter all API dataen fra miljostasjoner API-et utenom latitude og longitude inn i en tabell. Den andre visningen bruker googlemaps API-et for å gi en kart visning
