@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    </head>
+
+    <style>
+        table, th, td {
+            border: 5px solid black;
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+        }
+        body {
+            background-color: pink;
+        }
+
+        h1 {
+            color: navy;
+            margin-left: 20px;
+        }
+    </style>
+    <body>
+
+        <div class="ting" align="center">
+
+            <table style="width:50%">
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Plastic</th>
+
+                    <th>GlasMetal</th>
+
+                    <th>Shoe</th>
+
+                </tr>
+
+            {{range $.Entries}}
+
+                <tr>
+
+                    <th>{{.Name}}</th>
+
+                    <th>{{.Plastic}}</th>
+
+                    <th>{{.GlasMetal}}</th>
+
+                    <th>{{.Shoe}}</th>
+
+                </tr>
+
+            {{end}}
+
+            </table>
+
+        </div>
+
+    </body>
+
+</html>
