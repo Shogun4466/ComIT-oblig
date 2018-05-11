@@ -7,7 +7,7 @@ Benjamin Sarpong
 
 <h1>Systemspesifikasjoner:</h1>
 
-Programmet vårt er lagd for å vise innbyggerne i Stavanger hvor de kan finne Miljøstasjoner. Dette vises på nett i enten tabell form eller via Google maps. Man går frem ved å starte programmet for så å skrive localhost:8080/index i nettleseren, herfra kan man velge hvordan man vil se informasjonen. Brukere kan selv velge om de vil se en oversikt over miljøstasjonene i en tabell, eller om de vil se hvor stasjonene er i google maps. Vi vil hjelpe Stavangers innbyggere med å bli mer miljøvennelige!
+Programmet vårt er laget for å vise innbyggerne i Stavanger hvor de kan finne Miljøstasjoner. Dette vises på nett i enten tabellform eller via Google maps. Man går frem ved å starte programmet for så å skrive localhost:8080/index i nettleseren, herfra kan man velge hvordan man vil se informasjonen. Brukere kan selv velge om de vil se en oversikt over miljøstasjonene i en tabell, eller om de vil se hvor stasjonene er i google maps. Vi vil hjelpe Stavangers innbyggere med å bli mer miljøvennelige!
 
 
 <h1>Systemarkitekrtur</h1> <a href="https://imgur.com/6s6B2DN"><img src="https://i.imgur.com/6s6B2DN.png" title="source: imgur.com" /></a>
