@@ -7,6 +7,11 @@ import (
 	"testing"
 )
 
+//testingen vil alltid returnere en feil. Dersom APIet returnerer den forventede verdien vil TestWrongResponse feile.
+//Dersom APIet returnerer en annen verdi enn forventet vil TestCorrectResponse feile. Verdiene i testkoden fungerer
+//så lenge API-et ikke får flere eller færre stasjoner. Denne sub-otimale løsningen blir brukt fordi APIet ikke har
+//noe som identifiserer det i dataene som blir returnert.
+
 //Returnerer dataene i APIet
 func ResponseTest(url string) Test {
 	resp, err := http.Get("https://hotell.difi.no/api/json/stavanger/miljostasjoner")
