@@ -35,7 +35,7 @@ type Miljø struct {
 	}`json:"entries"`
 }
 
-//Denne koden brukes for å kunne kjøre enhetstesting. Slik det er nå vil alltid en av de "feile"
+//Denne koden brukes for å kunne kjøre enhetstesting. "posts" brukes til å identifisere .json-dataene.
 type Test struct{
 	Posts int `json:"posts"`
 }
