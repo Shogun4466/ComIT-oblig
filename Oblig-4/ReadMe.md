@@ -1,9 +1,9 @@
 <h1>Gruppemedlemmer:</h1>
 Benjamin Sarpong
-Ørjan Mortensen
-Vuong Nguyen
-Tor Ivar Martin Vik
-Jørgen Chr. A. Rostrup
+<br>Ørjan Mortensen
+<br>Vuong Nguyen
+<br>Tor Ivar Martin Vik
+<br>Jørgen Chr. A. Rostrup
 
 <h1>Systemspesifikasjoner:</h1>
 
